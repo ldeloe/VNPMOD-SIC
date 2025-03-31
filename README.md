@@ -1,2 +1,5 @@
 # VNPMOD-SIC
-Process for deriving sea ice concentration labels from VIIRS calibrated radiance (VNP02MOD) and geolocation (VNP03MOD) data
+Process for deriving sea ice concentration labels from VIIRS calibrated radiance (VNP02MOD) and geolocation (VNP03MOD) data.
+
+We investigated using pixel-wise SIC estimates, derived from the VIIRS Level-1B calibrated radiances (VNP02MOD) and Level-1 terrain corrected geolocation (VNP03MOD) products. Following the method presented by Kern et al. 2022 (https://doi.org/10.5194/tc-16-349-2022), top of atmosphere reflectance data from three reflective
+solar bands (M-4, M-5, and M-7) is used to calculate surface albedo. From these measurements, surface broadband shortwave albedo is estimated using the channel bandwidths as weights. Thresholds from Kern et al. 2022 are applied to classify pixels as open water or ice. Finally, SIC maps are generated at 12.5 km resolution, matching PM products, by summing gridded regions of ice-classified 750 m pixels. A visual comparison of preliminary SIC maps was conducted against University of Bremen ice concentration data to verify this approach.
